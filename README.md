@@ -24,14 +24,16 @@ The Gist of it:
 
 
 Adding a background is just a matter of overriding onchildDraw(..) like so:
-          ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+
+
+        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                         ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-                ...
+            ...
             // we want to cache these and not allocate anything repeatedly in the onChildDraw method
             Drawable background;
             boolean initiated;
-
             private void init() {
+            
                 background = new ColorDrawable(Color.parseColor("#ffff0000"));
                 initiated = true;
             }
